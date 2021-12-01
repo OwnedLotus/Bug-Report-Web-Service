@@ -12,14 +12,16 @@ namespace BugReportService.Models
             get { return _id; }
             set { _id = GenerateId(); }
         }
+
         [Required]
         public string Title { get; set; }
+
         [Required]
         public string Description { get; set; }
         public bool IsResolved { get; set; }
         public DateTime DateEntered 
-        { 
-            get { return _dateEntered; } 
+        {  
+            set { DateEntered = DateTime.Now;}
         }
 
         public Report()
